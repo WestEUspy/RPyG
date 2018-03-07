@@ -94,6 +94,7 @@ elif hClass == "goblin":
 elif hClass == "tee":
     Area = "iF City"
 
+
   #Moria Enemies:
 #Goblin Stats:
 Goblin_MinHP = 38
@@ -123,26 +124,34 @@ Spider_MaxGold = 57
 
 def battle():
     global hHP
+	global Area
     Enemy = randint(1,100)
-    if Area == "Jungle":
-        if Enemy < 51:
+        if Enemy < 33:
             eName = "Goblin"
             eHP = randint(Goblin_MinHP,Goblin_MaxHP)
             eMinDMG = Goblin_MinDMG
             eMaxDMG = Goblin_MaxDMG
             mGold = Goblin_MinGold
             MGold = Goblin_MaxGold
-        elif Enemy > 50:
+        elif Enemy < 66:
             eName = "Wild Boar"
             eHP = randint(Boar_MinHP,Boar_MaxHP)
             eMinDMG = Boar_MinDMG
             eMaxDMG = Boar_MaxDMG
             mGold = Boar_MinGold
             MGold = Boar_MaxGold
+        else:
+            eName = "Spider"
+            eHP = randint(Spider_MinHP,Spider_MaxHP)
+            eMinDMG = Spider_MinDMG
+            eMaxDMG = Spider_MaxDMG
+            mGold = Spider_MinGold
+            MGold = Spider_MaxGold
+
 
     btRound = 0
 
-    print("\n\n\n    «===[Area 1: Jungle]===»\n")
+    print("\n\n\n    «===[Area: "+Area+"]===»\n")
     input("Press ENTER to start fight.")
     while eHP > 0 and hHP > 0:
 
